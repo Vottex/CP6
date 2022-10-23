@@ -1,29 +1,30 @@
 import random
-def FillMassive(Massive, Size):
-    for i in range(Size):
+a = []
+b = []
+common_numbers = []
+size_a = input("Введите размер первого массива (должно быть целое число): ")
+size_b = input("Введите размер второго массива (должно быть целое число): ")
+
+
+def fill_array(massive, size):
+    for i in range(size):
         number = random.randint(-1000, 1000)/10
-        Massive.append(number)
-    print(Massive)
+        massive.append(number)
+    print(massive)
 
-A = []
-B = []
-Common = []
-
-SizeA = input("Введите целое число - размер первого массива: ")
-SizeB = input("Введите целое число - размер второго массива: ")
 
 try:
-    SizeA=int(SizeA)
-    SizeB=int(SizeB)
-    Check=True
+    size_a = int(size_a)
+    size_b = int(size_b)
+    Check = True
 except ValueError:
     print("Ввод некорректен, введите целые числа")
-    Check=False
+    Check = False
 
 if Check:
-    FillMassive(A, SizeA)
-    FillMassive(B, SizeB)
-    for i in A:
-        if i in B:
-            Common.append(i)
-    print("Общие числа: ", Common)
+    fill_array(a, size_a)
+    fill_array(b, size_b)
+    for i in a:
+        if i in b:
+            common_numbers.append(i)
+    print("Общие числа: ", common_numbers)
